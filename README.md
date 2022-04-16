@@ -1,2 +1,2 @@
 # ADC_DSPF035
-a simple ADC example
+官方给的例程
