@@ -1,0 +1,41 @@
+/*
+// TI File $Revision: /main/1 $
+// Checkin $Date: March 18, 2009   09:24:53 $
+//###########################################################################
+//
+// This .gel file can be used to help load and build the example project.
+// It should be unloaded from Code Composer Studio before loading another
+// project.
+//
+//###########################################################################
+// $TI Release: DSP2803x C/C++ Header Files V1.10 $
+// $Release Date: July 27, 2009 $
+//###########################################################################
+*/
+
+menuitem "DSP2803x CLA ADC Example"
+
+hotmenu Load_and_Build_Project()
+{
+   GEL_ProjectLoad("Example_2803xClaAdc.pjt");
+   GEL_ProjectBuild("Example_2803xClaAdc.pjt");
+   Setup_WatchWindow();
+}
+
+hotmenu Load_Code()
+{
+   GEL_Load(".\\debug\\Example_2803xClaAdc.out");
+   Setup_WatchWindow();
+}
+
+hotmenu Setup_WatchWindow()
+{
+   GEL_WatchReset();
+   GEL_WatchAdd("VoltageCLA,x");
+   GEL_WatchAdd("LoopCount,x");
+   GEL_WatchAdd("ConversionCount,d");
+   GEL_WatchAdd("AdcRegs,x");
+   GEL_WatchAdd("AdcResult,x");
+   GEL_WatchAdd("EPwm1Regs,x");
+   GEL_WatchAdd("Cla1Regs,x");
+}
